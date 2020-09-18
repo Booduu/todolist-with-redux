@@ -27,7 +27,14 @@ export const todosRed = (state = initialState, action) => {
           ...state,
           todos: newTodos
         }
+      case actions.DELETE_ALL_TODOS:
+        return {
+          ...state,
+          todos: []
+        }
+        break;
       case actions.TOGGLE_TODO:
+        console.log('toggle');
         const newTodosList = [...state.todos];
         newTodosList[action.index].done = !newTodosList[action.index].done;
         return {

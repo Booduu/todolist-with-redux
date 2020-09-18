@@ -1,6 +1,7 @@
 
 export const ADD_TODO = 'add todo'; 
 export const DELETE_TODO = 'delete todo';
+export const DELETE_ALL_TODOS = 'delete all todo';
 export const SET_FILTER = 'set filter';
 export const TOGGLE_TODO = 'toggle todo';
 
@@ -21,6 +22,13 @@ export const deleteTodo = (index) => {
     return {
         type: DELETE_TODO,
         index
+    }
+}
+
+export const deleteAllTodos = () => {
+    return {
+        type: DELETE_ALL_TODOS
+        
     }
 }
 

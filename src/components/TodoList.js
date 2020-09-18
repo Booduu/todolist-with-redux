@@ -15,7 +15,7 @@ const TodoList = ({ todos, filter, deleteTodo, toggleTodo }) => {
                     key={ t.name } 
                     todo={ t } 
                     deleteTodo={ () => deleteTodo(i) } 
-                    toggleTodo={ () => toggleTodo(i) }
+                    toggleTodo={ () => toggleTodo(i)} 
                 />
             ))} 
         </ul>

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import AddTodo from './components/AddTodo';
 import Filter from './components/Filter';
 import TodoList from './components/TodoList';
+import DeleteAllTodos from './components/DeleteAllTodos';
 
 
 class App extends Component {
@@ -18,9 +19,9 @@ class App extends Component {
             <Filter/>
           </div>
           <div className="card-body">
-           <TodoList />
-
+            <TodoList />
           </div>
+          <DeleteAllTodos />
         </div>
       </div>
     );
