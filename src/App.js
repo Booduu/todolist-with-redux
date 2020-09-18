@@ -3,27 +3,44 @@ import AddTodo from './components/AddTodo';
 import Filter from './components/Filter';
 import TodoList from './components/TodoList';
 import DeleteAllTodos from './components/DeleteAllTodos';
-
+import { makeStyles } from '@material-ui/core/styles';
+import Card from '@material-ui/core/Card';
+import CardActions from '@material-ui/core/CardActions';
+import CardContent from '@material-ui/core/CardContent';
+import Typography from '@material-ui/core/Typography';
+import Box from '@material-ui/core/Box';
+import Container from '@material-ui/core/Container';
 
 class App extends Component {
+  
   render() {
+   
     return (
-      <div className="container p-5" >
-        <h4>Ajouter une todo</h4>
+      <Container  maxWidth="sm">
         <hr className="my-4" />
         <AddTodo />
         <hr className="my-4" />
-        <div className="card">
-          <div className="card-header d-flex flex-row align-items-center">
-            <span className="flex-fill">Todo list</span>
-            <Filter/>
-          </div>
+
+        {/* <div className="card"> */}
+        <Card>
+         <CardContent>
+          <Box display="flex" justifyContent="space-between">
+            <Typography>
+              TO-DO LIST
+            </Typography>
+            <Filter className={{ display:'flex', justifyContent: 'space-between'}}/>
+          </Box>
+          
+
           <div className="card-body">
             <TodoList />
           </div>
           <DeleteAllTodos />
-        </div>
-      </div>
+          </CardContent>
+        </Card>
+        {/* </div>   */}
+
+      </Container>
     );
   }
 }

@@ -1,17 +1,14 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { deleteAllTodos } from '../store/actions';
+import { Button } from '@material-ui/core';
 
 const DeleteAllTodos = ({ todos, deleteAllTodos }) => {
 
     return (
         <>
         { todos.length > 1 && (
-            <button 
-                type="button"
-                onClick={ () => deleteAllTodos() } 
-                className="btn btn-danger btn-small w-25"> Delete All
-            </button>
+            <Button onClick={ () => deleteAllTodos() } >Delete All</Button>
         )}   
         </>
     )
