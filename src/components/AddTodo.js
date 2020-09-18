@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { addTodo } from '../store/actions';
-import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import { Button } from '@material-ui/core';
 import Box from '@material-ui/core/Box';
@@ -24,7 +23,7 @@ class AddTodo extends Component {
 
     render() {
         return (
-            <div style={{ width: '100%' }}>
+            <div style={{ width: '100%', margin: '2rem 0 2rem 0' }}>
                 <Box display="flex" justifyContent="space-between">
                     <form noValidate autoComplete="off" style={{ width: '100%'}}>
                         <TextField style={{ width: '90%'}} id="outlined-basic" label="Ajouter une to-do" variant="outlined" inputRef={ this.input } />

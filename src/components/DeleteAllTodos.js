@@ -6,11 +6,11 @@ import { Button } from '@material-ui/core';
 const DeleteAllTodos = ({ todos, deleteAllTodos }) => {
 
     return (
-        <>
+        <div style={{ display: 'flex', justifyContent: 'flex-end', padding:'0 20px 0 20px'}}>
         { todos.length > 1 && (
             <Button onClick={ () => deleteAllTodos() } >Delete All</Button>
         )}   
-        </>
+        </div>
     )
 }
 

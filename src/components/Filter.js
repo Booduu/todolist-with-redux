@@ -1,6 +1,5 @@
 import React from 'react';
 import { Button } from '@material-ui/core';
-import Grid from '@material-ui/core/Grid';
 import { connect } from 'react-redux';
 import { setFilter, visibilityFilters } from '../store/actions';
 

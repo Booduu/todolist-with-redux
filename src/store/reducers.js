@@ -3,12 +3,20 @@ import * as actions from './actions';
 const initialState = {
   todos: [
     {
-      name: 'premiere chose à faire',
+      name: 'On va manger des chips',
       done: false
     },
     {
-      name: 'seconde chose à faire',
+      name: 'C\'est tout ce que ca t\'fais quand j\'te dis qu\'on va manger des chips ?',
       done: false
+    },
+    {
+      name: 'Qu\'est-ce qu\'il y a ? Tu fais la trouche ou quoi ?' ,
+      done: false
+    },
+    {
+      name: 'Hugh Salut !' ,
+      done: true
     }
   ],
   filter: actions.visibilityFilters.SHOW_ALL
@@ -51,13 +59,3 @@ export const todosRed = (state = initialState, action) => {
     }
  }
 
-// export const filter = (state = actions.visibilityFilters.SHOW_ALL, action) => {
-//     switch(action.type) {
-//         case actions.SET_FILTER: {
-//             return action.filter
-//         }
-//         default: {
-//             return state
-//         }
-//     }
-// }

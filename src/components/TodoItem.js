@@ -11,7 +11,7 @@ const TodoItem = ({ todo, toggleTodo, deleteTodo }) => {
     // <li onClick={toggleTodo} className="list-group-item d-flex flex-row justify-content-between align-items-center list-group-item-action" >
      <Box display="flex" justifyContent="space-between" alignItems="center">
      {/* <Box display="flex" justifyContent="space-between"> */}
-        <span> {todo.name} </span>
+        <span style={{ width: '90%'}}> {todo.name} </span>
         <span style={{ display: 'flex'}}>
           <ListItemIcon onClick={toggleTodo}>
             <Checkbox
