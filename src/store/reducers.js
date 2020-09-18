@@ -1,30 +1,57 @@
 import * as actions from './actions';
 
-export const todos = (state = [], action) => {
+const initialState = {
+  todos: [
+    {
+      name: 'premiere chose à faire',
+      done: false
+    },
+    {
+      name: 'seconde chose à faire',
+      done: false
+    }
+  ],
+  filter: actions.visibilityFilters.SHOW_ALL
+}
+
+export const todosRed = (state = initialState, action) => {
     switch (action.type) {
-     case actions.ADD_TODO:
-       return [ ...state, action.todo ];
-     case actions.DELETE_TODO:
-       return state.filter((t, i) => i !== action.index);
-     case actions.TOGGLE_TODO:
-       return state.map((t, i) => {
-         if (i === action.index) {
-           t.done = !t.done;
-         }
-         return t;
-       })
-     default:
-       return state
-   }
+      case actions.ADD_TODO:
+        return {
+          ...state,
+          todos: state.todos.concat(action.todo)
+        };
+      case actions.DELETE_TODO:
+        const newTodos = [ ...state.todos ].filter( (t, i) => i !== action.index);
+        return {
+          ...state,
+          todos: newTodos
+        }
+      case actions.TOGGLE_TODO:
+        const newTodosList = [...state.todos];
+        newTodosList[action.index].done = !newTodosList[action.index].done;
+        return {
+          ...state,
+          todos: newTodosList
+        }
+      case actions.SET_FILTER: {
+        return {
+          ...state,
+          filter: action.filter
+        }
+      }
+      default:
+        return state
+    }
  }
 
-export const filter = (state = actions.visibilityFilters.SHOW_ALL, action) => {
-    switch(action.type) {
-        case actions.SET_FILTER: {
-            return action.filter
-        }
-        default: {
-            return state
-        }
-    }
-}
+// export const filter = (state = actions.visibilityFilters.SHOW_ALL, action) => {
+//     switch(action.type) {
+//         case actions.SET_FILTER: {
+//             return action.filter
+//         }
+//         default: {
+//             return state
+//         }
+//     }
+// }

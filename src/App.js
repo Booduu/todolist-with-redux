@@ -7,7 +7,7 @@ import TodoList from './components/TodoList';
 class App extends Component {
   render() {
     return (
-      <div className="container p-5" style={{ backgroundColor: '#2980b9'}}>
+      <div className="container p-5" >
         <h4>Ajouter une todo</h4>
         <hr className="my-4" />
         <AddTodo />

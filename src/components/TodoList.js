@@ -4,11 +4,13 @@ import { connect } from 'react-redux';
 import { visibilityFilters, toggleTodo, deleteTodo } from '../store/actions';
 
 
-const TodoList = ({ todos, deleteTodo, toggleTodo }) => {
+const TodoList = ({ todos, filter, deleteTodo, toggleTodo }) => {
+
+  const filterArray = filter === visibilityFilters.SHOW_ALL ? todos : filter === visibilityFilters.SHOW_DONE ? todos.filter( (t, i) => t.done ) : todos.filter( (t, i) => !t.done)
 
     return (
         <ul className="list-group">  
-            { todos && todos.map( (t, i) => (
+            { filterArray.map( (t, i) => (
                 <TodoItem 
                     key={ t.name } 
                     todo={ t } 
@@ -20,22 +22,7 @@ const TodoList = ({ todos, deleteTodo, toggleTodo }) => {
     )
 }
 
-export default connect(state => {
-    const filter = state.filter;
-    let todos;
-    switch(filter) {
-      case visibilityFilters.SHOW_DONE: {
-        todos = state.todos.filter( t => t.done )
-        break;
-      }
-      case visibilityFilters.SHOW_ACTIVE: {
-        todos = state.todos.filter( t => !t.done )
-        break;
-      }
-      default: {
-        todos = state.todos
-        break;
-      }
-    }
-    return {todos};
-  }, {toggleTodo, deleteTodo})(TodoList);
+export default connect(state => ({
+    filter: state.todosRed.filter,
+    todos: state.todosRed.todos
+  }), {toggleTodo, deleteTodo})(TodoList);
