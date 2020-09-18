@@ -13,13 +13,10 @@ import Divider from '@material-ui/core/Divider';
 class App extends Component {
   
   render() {
-   
     return (
       <Container  maxWidth="sm">
         <AddTodo />
         <Divider />
-
-        {/* <div className="card"> */}
         <Card style={{ paddingTop: '20px'}}>
          <CardContent>
           <Box display="flex" justifyContent="space-between">
@@ -28,10 +25,8 @@ class App extends Component {
             </Typography>
             <Filter className={{ display:'flex', justifyContent: 'space-between'}}/>
           </Box>
-          
             <TodoList />
           <DeleteAllTodos />
-         
         </CardContent>
         </Card>
       </Container>

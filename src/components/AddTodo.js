@@ -5,8 +5,6 @@ import TextField from '@material-ui/core/TextField';
 import { Button } from '@material-ui/core';
 import Box from '@material-ui/core/Box';
 
-
-
 class AddTodo extends Component {
     constructor(props) {
         super(props);

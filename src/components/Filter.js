@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import { setFilter, visibilityFilters } from '../store/actions';
 
 
-
 const Filter = ( { setFilter } ) => {
     return (
         <div>
