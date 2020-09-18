@@ -32,7 +32,6 @@ export const todosRed = (state = initialState, action) => {
           ...state,
           todos: []
         }
-        break;
       case actions.TOGGLE_TODO:
         console.log('toggle');
         const newTodosList = [...state.todos];
